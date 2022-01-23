@@ -13,6 +13,8 @@ const partialsPath = path.join(__dirname,'../templates/partials')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 //Setup handlebars engine
 app.set('view engine','hbs') //set up the handlebars engine for express that we installed via npm
 app.set('views',viewsPath) //to change the default views directory to a new name
@@ -121,7 +123,6 @@ app.get('*',(req,res)=>{
   })
 })
 
-const port = 3000
 app.listen(port, ()=>{
   //This callback runs when the server starts up
   console.log(`Server is up on port ${port}`)

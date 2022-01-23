@@ -16,7 +16,7 @@ const getWeather = (address) =>{
     return
   }
 
-  const weatherUrl = `http://192.168.50.143:3000/weather?address=${address}`
+  const weatherUrl = `/weather?address=${address}`
   
   fetch(weatherUrl).then((response)=>{
     // response.json().then((data)=>{
