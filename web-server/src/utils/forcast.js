@@ -11,9 +11,9 @@ const forcast = (lat,long,callback)=>{
     // console.log("forcast body error")
     callback("Unable to resolve location, please try a different input.",undefined)
   } else {
-    // console.log("forcast else")
+    console.log(body)
     const data = body.current
-    callback(error,`It is currently ${data.temperature} degrees out.  It feels like ${data.feelslike} degrees.`)
+    callback(error,`It is currently ${data.temperature} degrees out.  It feels like ${data.feelslike} degrees.  There is ${data.cloudcover}% cloud cover.`)
   }
 }) 
 }
