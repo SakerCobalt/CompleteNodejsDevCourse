@@ -6,7 +6,7 @@ const auth = async (req,res,next)=>{
     //Get token from request and remove Bearer from the front
     const token = req.header('Authorization').replace('Bearer ','')
     // console.log('Encoded Token',token)
-    // console.log('JSON web token verification',jwt.verify(token,'thisismynewcourse'))
+    // console.log('JSON web token verification',jwt.verify(token,process.env.JWT_SECRET))
     const decoded = jwt.verify(token,process.env.JWT_SECRET)
     // console.log('This is decoded:',decoded._id)
     const user = await User.findOne({_id:decoded._id, 'tokens.token':token})
