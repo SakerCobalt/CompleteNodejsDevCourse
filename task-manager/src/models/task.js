@@ -22,7 +22,7 @@ const taskSchema = new mongoose.Schema({
 taskSchema.pre('save',async function (next) {
   const task = this
   //Where middleware is run
-  console.log('Middleware running.')
+  // console.log('Middleware running.')
   next()
 })
 

@@ -13,7 +13,7 @@ const partialsPath = path.join(__dirname,'../templates/partials')
 
 const app = express()
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 //Setup handlebars engine
 app.set('view engine','hbs') //set up the handlebars engine for express that we installed via npm
